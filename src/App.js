@@ -1,7 +1,11 @@
-import {useEffect} from "react";
+import React from 'react';
+import {useEffect, useState} from "react";
+
 import TmdbApi from './api/TmdbApi'
+import MovieRow from "./components/MovieRow";
 
 export default function App()  {
+    const [moveList, setMoveList] = useState([]);
 
     useEffect(() => {
         (async () => {
@@ -11,12 +15,20 @@ export default function App()  {
 
     const loadAll = async () => {
         const list = await TmdbApi.getHomeList();
-        console.log(list);
+        setMoveList(list);
     }
 
     return (
-        <div className="App">
-            <span>teste</span>
+        <div className='pages'>
+          <section className='lists'>
+              {moveList.map((item) => (
+                  <MovieRow
+                      key={item.title}
+                      title={item.title}
+                      items={item.items}
+                  />
+              ))}
+          </section>
         </div>
     );
 }
