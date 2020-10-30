@@ -4,6 +4,8 @@ import {useEffect, useState} from "react";
 import TmdbApi from './api/TmdbApi'
 import MovieRow from "./components/MovieRow";
 
+import './App.css'
+
 export default function App()  {
     const [moveList, setMoveList] = useState([]);
 
