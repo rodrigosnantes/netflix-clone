@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05845e5-95b1-428c-8e21-9bb2b88a612a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/FeaturedMove.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FeaturedMove.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/TmdbApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/TmdbApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FeaturedMove.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeaturedMove.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
       <workItem from="1603762237815" duration="1746000" />
       <workItem from="1603849384222" duration="576000" />
       <workItem from="1604021302192" duration="2411000" />
-      <workItem from="1604449306625" duration="2745000" />
+      <workItem from="1604449306625" duration="4093000" />
     </task>
     <servers />
   </component>

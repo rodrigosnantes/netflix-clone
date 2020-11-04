@@ -8,7 +8,6 @@ import FeaturedMove from "./components/FeaturedMove";
 import './App.css'
 
 export default function App()  {
-    const [loading, setLoading] = useState(true);
     const [moveList, setMoveList] = useState([]);
     const [featuredData, setFeaturedData] = useState(null);
 
@@ -17,11 +16,9 @@ export default function App()  {
             const resultMoveList = await loadAll();
             setMoveList(resultMoveList);
 
-            if (resultMoveList) {
-                const resultFeaturedMove = await randomFeatured(resultMoveList);
-                setFeaturedData(resultFeaturedMove);
-                setLoading(false);
-            }
+            const resultFeaturedMove = await randomFeatured(resultMoveList);
+
+            setFeaturedData(await getAdditionalMoveInfo(resultFeaturedMove));
         })();
     }, [])
 
@@ -32,18 +29,20 @@ export default function App()  {
     const randomFeatured = async (list) => {
         const originals = list.filter(move => move.slug === 'originals');
         const randomItem = Math.floor(Math.random() * (originals[0].items.results.length - 1))
-        setFeaturedData(originals[0].items.results[randomItem])
+        return originals[0].items.results[randomItem];
     }
 
 
-    if (loading) return null;
+    const getAdditionalMoveInfo = async (move) => {
+        return TmdbApi.getMoveInfo(move.id, 'tv')
+    }
 
     return (
         <div className='pages'>
           <section className='lists'>
 
               {featuredData &&
-                <FeaturedMove item={featuredData} />
+                <FeaturedMove featuredData={featuredData} />
               }
 
               {moveList.map((item) => (
