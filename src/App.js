@@ -33,18 +33,16 @@ export default function App()  {
     }
 
 
-    const getAdditionalMoveInfo = async (move) => {
-        return TmdbApi.getMoveInfo(move.id, 'tv')
-    }
+    const getAdditionalMoveInfo = async (move) => { return TmdbApi.getMoveInfo(move.id, 'tv') }
 
     return (
         <div className='pages'>
-          <section className='lists'>
 
-              {featuredData &&
-                <FeaturedMove featuredData={featuredData} />
-              }
+          {featuredData &&
+            <FeaturedMove item={featuredData} />
+          }
 
+            <section className='lists'>
               {moveList.map((item) => (
                   <MovieRow
                       key={item.title}
