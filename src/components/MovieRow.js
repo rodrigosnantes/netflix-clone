@@ -5,18 +5,23 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import './MovieRow.css'
 
 export default ({ title, items }) => {
-    const [scrollX, setScrollX] = useState(-400);
+    const [sizeList] = useState(items.results.length * 150);
+    const [scrollX, setScrollX] = useState(0);
 
     const handleLeftArrow = () => {
         let x = scrollX + Math.round(window.innerWidth / 2);
         if (x > 0) {
             x = 0;
         }
-        setScrollX(x)
+        setScrollX(x);
     }
 
     const handleRightArrow = () => {
-
+        let x = scrollX - Math.round(window.innerWidth / 2);
+        if ((window.innerWidth - sizeList) - x) {
+            x = window.innerWidth - sizeList -60;
+        }
+        setScrollX(x);
     }
 
     return (
@@ -36,7 +41,7 @@ export default ({ title, items }) => {
                 <div
                     className='movieRow--list'
                     style={{
-                        width: items.results.length * 150,
+                        width: sizeList,
                         marginLeft: scrollX
                     }}
                 >
