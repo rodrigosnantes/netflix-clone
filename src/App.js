@@ -70,6 +70,13 @@ export default function App()  {
                   />
               ))}
           </section>
+
+            { moveList.length <= 0 && (
+                <div className='loading'>
+                    <img src='https://www.filmelier.com/pt/br/news/wp-content/uploads/2020/03/Netflix_LoadTime-scaled.gif' alt='Carregando'/>
+                </div>
+            )}
+
         </div>
     );
 }
