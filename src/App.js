@@ -4,12 +4,14 @@ import {useEffect, useState} from "react";
 import TmdbApi from './api/TmdbApi'
 import MovieRow from "./components/MovieRow";
 import FeaturedMove from "./components/FeaturedMove";
+import Header from "./components/Header";
 
 import './App.css'
 
 export default function App()  {
     const [moveList, setMoveList] = useState([]);
     const [featuredData, setFeaturedData] = useState(null);
+    const [blackHeader, setBackHeader] = useState(0);
 
     useEffect(() => {
         (async () => {
@@ -37,6 +39,8 @@ export default function App()  {
 
     return (
         <div className='pages'>
+
+            <Header blackHeader={blackHeader}/>
 
           {featuredData &&
             <FeaturedMove item={featuredData} />
