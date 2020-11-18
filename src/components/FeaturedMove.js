@@ -2,10 +2,12 @@ import React from 'react';
 import './FeaturedMove.css'
 
 export default function FeaturedMove({ item }) {
-    console.log(item)
-
     const moveYear = new Date(item.first_air_date).getFullYear();
     const genresList = item.genres.map((elem) => (elem.name))
+    let description = item.overview;
+    if (description.length > 300) {
+        description = description.substring(0, 300)+'...'
+    }
 
     return (
        <section
@@ -24,7 +26,7 @@ export default function FeaturedMove({ item }) {
                        <div className='featured--points'>{item.vote_average}</div>
                        <div className='featured--year'>{moveYear}</div>
                        <div className='featured--seasons'>{item.number_of_seasons} Temporadas</div>
-                       <div className='featured--description'>{item.overview}</div>
+                       <div className='featured--description'>{description}</div>
 
                        <div className='featured--buttons'>
                             <a className='featured--watchbutton' href='/' >Assistir</a>

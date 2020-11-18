@@ -7,8 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f05845e5-95b1-428c-8e21-9bb2b88a612a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeaturedMove.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeaturedMove.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MovieRow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MovieRow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FeaturedMove.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeaturedMove.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +78,7 @@
       <workItem from="1604021302192" duration="2411000" />
       <workItem from="1604449306625" duration="4093000" />
       <workItem from="1605615615816" duration="7004000" />
-      <workItem from="1605699590029" duration="5546000" />
+      <workItem from="1605699590029" duration="5994000" />
     </task>
     <servers />
   </component>
@@ -156,5 +155,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605615956048" />
+    <state x="865" y="123" width="585" height="801" key="find.popup" timestamp="1605705587234">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="865" y="123" width="585" height="801" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605705587234" />
   </component>
 </project>
