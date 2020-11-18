@@ -11,7 +11,7 @@ import './App.css'
 export default function App()  {
     const [moveList, setMoveList] = useState([]);
     const [featuredData, setFeaturedData] = useState(null);
-    const [blackHeader, setBackHeader] = useState(0);
+    const [blackHeader, setBackHeader] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -23,6 +23,21 @@ export default function App()  {
             setFeaturedData(await getAdditionalMoveInfo(resultFeaturedMove));
         })();
     }, [])
+
+    useEffect(() => {
+        const scrollListener = () => {
+            if (window.scrollY > 10) {
+                setBackHeader(true);
+            } else {
+                setBackHeader(false);
+            }
+        }
+
+        window.addEventListener('scroll', scrollListener);
+        return () => {
+            window.removeEventListener('scroll', scrollListener);
+        }
+    },[])
 
     const loadAll = async () => {
         return await TmdbApi.getHomeList();
